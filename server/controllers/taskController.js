@@ -1,6 +1,6 @@
 import Task from "../models/Task.js";
 
-// ➕ Create Task
+// Create Task
 export const createTask = async (req, res) => {
   try {
     const { taskName, category, priority } = req.body;
@@ -16,7 +16,7 @@ export const createTask = async (req, res) => {
   }
 };
 
-// 📋 Get all Tasks for user
+// Get all Tasks for user
 export const getTasks = async (req, res) => {
   try {
     const tasks = await Task.find({ userId: req.user });
@@ -26,7 +26,7 @@ export const getTasks = async (req, res) => {
   }
 };
 
-// ✏️ Update Task
+// Update Task
 export const updateTask = async (req, res) => {
   try {
     const task = await Task.findOneAndUpdate(
@@ -40,7 +40,7 @@ export const updateTask = async (req, res) => {
   }
 };
 
-// ❌ Delete Task
+// Delete Task
 export const deleteTask = async (req, res) => {
   try {
     await Task.findOneAndDelete({ _id: req.params.id, userId: req.user });

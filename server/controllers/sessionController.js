@@ -1,7 +1,7 @@
 import Session from "../models/Session.js";
 import Task from "../models/Task.js";
 
-// ▶️ Start Timer
+// Start Timer
 export const startTimer = async (req, res) => {
   try {
     const { taskId } = req.body;
@@ -16,7 +16,7 @@ export const startTimer = async (req, res) => {
   }
 };
 
-// ⏹ Stop Timer
+// Stop Timer
 export const stopTimer = async (req, res) => {
   try {
     const { sessionId } = req.body;
@@ -43,7 +43,7 @@ export const stopTimer = async (req, res) => {
   }
 };
 
-// 📊 Get sessions for a user
+// Get sessions for a user
 export const getSessions = async (req, res) => {
   try {
     const sessions = await Session.find({ userId: req.user }).populate("taskId");
